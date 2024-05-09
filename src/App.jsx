@@ -1,26 +1,27 @@
 function App() {
-  // &&, ||
+  // javascript review
 
-  // falsy(false 같은),
-  // : false, 0, "", null, undefined
+  // javascript data type
+  let a; // 값이 할당되지 않으면 undefined
+  console.log("a", typeof a);
+  let b = "문자열 타입"; // string
+  console.log("b", typeof b);
+  let c = 3; // number
+  console.log("c", typeof c);
+  let d = 3.14; // number
+  console.log("d", typeof d);
+  let e = true; // boolean
+  console.log("e", typeof e);
 
-  const a = "undefined";
+  let f = {}; // object
+  console.log("f", typeof f);
 
-  if (a) console.log("a는 참이다.");
-  else console.log("a는 거짓이다.");
+  let g = function () {}; // function
+  console.log("g", typeof g);
+  g = {};
+  console.log("g", typeof g);
 
-  // truthy(true 같은) : falsy 가 아니면 truthy
-
-  // &&, || 와 조합
-
-  let b = 0;
-  let c = b && "값이 있음";
-  console.log("c", c);
-
-  let d = b || "값이 없음";
-  console.log("d", d);
-
-  return <></>;
+  return <div></div>;
 }
 
 export default App;
