@@ -19,6 +19,10 @@ function App(props) {
         }}
       >
         클릭#
+      </button>{" "}
+      <br />
+      <button onClick={() => console.log("anonymous arrow function")}>
+        클릭$
       </button>
     </div>
   );
