@@ -1,22 +1,7 @@
-import React, { useState } from "react";
-
-function MyCounter() {
-  const [val, setVal] = useState(0);
-
-  return (
-    <div>
-      {val}
-      <button onClick={() => setVal(val + 1)}>증가</button>
-    </div>
-  );
-}
+import React from "react";
 
 function App(props) {
-  return (
-    <div>
-      <MyCounter />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
