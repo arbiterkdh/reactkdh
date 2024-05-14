@@ -17,15 +17,32 @@ function MyContainer() {
 
 function App(props) {
   const [message, setMessage] = useState("");
+  const [list, setList] = useState([]);
+
+  function handleUpdateList() {
+    list.push(message);
+    setMessage("");
+  }
 
   return (
     <div>
-      <input type="text" onChange={(e) => setMessage(e.target.value)} />
+      <input
+        value={message}
+        type="text"
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <button onClick={handleUpdateList}>등록</button>
       <p>{message}</p>
       <hr />
       <MessageContext.Provider value={message}>
         <MyContainer />
       </MessageContext.Provider>
+      <hr />
+      <ul>
+        {list.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
