@@ -26,8 +26,14 @@ function MyButton({ onClick }) {
   return <button onClick={onClick}>등록</button>;
 }
 
-function MyList() {
-  return <ul></ul>;
+function MyList({ list }) {
+  return (
+    <ul>
+      {list.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  );
 }
 
 function App(props) {
@@ -47,14 +53,15 @@ function App(props) {
     <div>
       <TextContext.Provider
         value={{
-          text: text,
+          text,
           updateText: handleUpdateText,
         }}
       >
         <MyInput />
         <MyButton onClick={handleUpdateList} />
         <MyText />
-        <MyList />
+        <hr />
+        <MyList list={list} />
       </TextContext.Provider>
     </div>
   );
