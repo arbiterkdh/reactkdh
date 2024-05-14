@@ -5,12 +5,11 @@ const TextContext = createContext(null);
 function MyInput() {
   const textHandler = useContext(TextContext);
   return (
-    <div>
-      <input
-        type="text"
-        onChange={(e) => textHandler.updateText(e.target.value)}
-      />
-    </div>
+    <input
+      value={textHandler.text}
+      type="text"
+      onChange={(e) => textHandler.updateText(e.target.value)}
+    />
   );
 }
 
@@ -23,11 +22,25 @@ function MyText() {
   );
 }
 
+function MyButton({ onClick }) {
+  return <button onClick={onClick}>등록</button>;
+}
+
+function MyList() {
+  return <ul></ul>;
+}
+
 function App(props) {
   const [text, setText] = useState("");
+  const [list, setList] = useState([]);
 
   function handleUpdateText(t) {
     setText(t);
+  }
+
+  function handleUpdateList() {
+    list.push(text);
+    setText("");
   }
 
   return (
@@ -39,7 +52,9 @@ function App(props) {
         }}
       >
         <MyInput />
+        <MyButton onClick={handleUpdateList} />
         <MyText />
+        <MyList />
       </TextContext.Provider>
     </div>
   );
