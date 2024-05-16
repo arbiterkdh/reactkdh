@@ -28,6 +28,16 @@ function App(props) {
     axios.post("http://localhost:8080/api/some-url2");
   }
 
+  function handleClickButton5() {
+    const params = new URLSearchParams();
+
+    params.append("id", 3);
+    params.append("name", "son");
+    params.append("email", "son@son.com");
+
+    axios.get(`/api/some-url3?${params}`);
+  }
+
   return (
     <div>
       <button onClick={handleClickButton1}>get 요청</button>
@@ -35,6 +45,8 @@ function App(props) {
       {/* /api/some-url2 */}
       <button onClick={handleClickButton3}>get 요청2</button>
       <button onClick={handleClickButton4}>post 요청2</button>
+
+      <button onClick={handleClickButton5}>get 요청 with query string</button>
 
       {/*  혼자 연습용 */}
       <button onClick={handleClickButtonPractice1}>get practice</button>
