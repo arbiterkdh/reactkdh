@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function App(props) {
+  const [singer, setSinger] = useState("");
+  const [song, setSong] = useState("");
+
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
   function handleClick() {
@@ -25,6 +28,10 @@ function App(props) {
     axios.post("/api/main41/sub3", { name, city });
   }
 
+  function handleClick4() {
+    axios.post("/api/main41/sub4", { singer, song });
+  }
+
   return (
     <div>
       <button onClick={handleClick}>요청(json 데이터 포함)</button>
@@ -37,6 +44,13 @@ function App(props) {
         <input type="text" onChange={(e) => setCity(e.target.value)} />
         <br />
         <button onClick={handleClick3}>요청 (input 에 입력한 값)</button>
+      </div>
+      <div>
+        <input type="text" onChange={(e) => setSinger(e.target.value)} />
+        <br />
+        <input type="text" onChange={(e) => setSong(e.target.value)} />
+        <br />
+        <button onClick={handleClick4}>등록</button>
       </div>
     </div>
   );
