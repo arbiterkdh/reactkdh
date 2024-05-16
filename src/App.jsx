@@ -10,9 +10,20 @@ function App(props) {
     axios.post("/api/main41/sub1", obj1);
   }
 
+  function handleClick2() {
+    const obj1 = {
+      name: "yerin",
+      beauty: "amazing",
+      song: "square(2017)",
+    };
+    axios.post("/api/main41/sub2", obj1);
+  }
+
   return (
     <div>
       <button onClick={handleClick}>요청(json 데이터 포함)</button>
+      {/*  같은 상황 연습 /api/main41/sub2 post */}
+      <button onClick={handleClick2}>요청 (json 데이터 포함)</button>
     </div>
   );
 }
