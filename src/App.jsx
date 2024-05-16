@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 
 function App(props) {
-  const [text, setText] = useState("");
   function handleClick1() {
     axios.get("/api/main42/sub1").then((param) => console.log(param.data));
   }
@@ -13,10 +12,6 @@ function App(props) {
 
   function handleClick3() {
     axios.get("/api/main42/sub3").then((res) => console.log(res.data));
-  }
-
-  function handleClick4() {
-    axios.get("/api/main42/sub4").then((res) => setText(res.data));
   }
 
   function handleClick5() {
@@ -33,9 +28,7 @@ function App(props) {
       <br />
       {/* /api/main42/sub4 get 요청 후
       응답 받은 내용을 콘솔에 출력 */}
-      <input type="text" onChange={(e) => setText(e.target.value)} />
-      <button onChange={handleClick4}>JSON 에 응답 받기</button>
-      <p>{text}</p>
+
       <br />
       <button onClick={handleClick5}>응답 받기</button>
     </div>
