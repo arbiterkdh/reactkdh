@@ -50,6 +50,9 @@ function App(props) {
         } else if (err.response.status === 403) {
           console.log("접근 권한이 없습니다.");
         }
+      })
+      .finally(() => {
+        console.log("항상 실행되는 메소드.");
       });
   }
 
