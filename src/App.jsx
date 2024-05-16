@@ -20,6 +20,14 @@ function App(props) {
     axios.post("/api/some-url2");
   }
 
+  function handleClickButtonPractice1() {
+    axios.get("http://localhost:8080");
+  }
+
+  function handleClickButtonPractice2() {
+    axios.post("http://localhost:8080/api/some-url2");
+  }
+
   return (
     <div>
       <button onClick={handleClickButton1}>get 요청</button>
@@ -27,6 +35,10 @@ function App(props) {
       {/* /api/some-url2 */}
       <button onClick={handleClickButton3}>get 요청2</button>
       <button onClick={handleClickButton4}>post 요청2</button>
+
+      {/*  혼자 연습용 */}
+      <button onClick={handleClickButtonPractice1}>get practice</button>
+      <button onClick={handleClickButtonPractice2}>post practice</button>
     </div>
   );
 }
