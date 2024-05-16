@@ -38,11 +38,29 @@ function App(props) {
       });
   }
 
+  function handleClick() {
+    axios
+      .get("/api/main43/sub7")
+      .then((res) => {
+        console.log("웹사이트에 정상적으로 연결됐습니다.");
+      })
+      .catch((err) => {
+        if (err.response.status === 401) {
+          console.log("인증되지 않은 사용자입니다.");
+        } else if (err.response.status === 403) {
+          console.log("접근 권한이 없습니다.");
+        }
+      });
+  }
+
   return (
     <div>
       <button onClick={handle200}>200 응답</button>
       <button onClick={handle400}>400 응답</button>
       <button onClick={handle500}>500 응답</button>
+
+      {/* 200, 401, 403 응답일 때 각각 다른 일하는 코드 작성 */}
+      <button onClick={handleClick}>응답 코드에 따라 다른 일하기</button>
     </div>
   );
 }
