@@ -14,6 +14,23 @@ const router = createBrowserRouter([
     page: "home",
     element: <div>home</div>,
   },
+  {
+    page: "spring",
+    children: [
+      {
+        page: "framework",
+        element: <div>framework</div>,
+      },
+      {
+        page: "doc",
+        element: <div>doc</div>,
+      },
+      {
+        page: "learn",
+        element: <div>learn</div>,
+      },
+    ],
+  },
 ]);
 // /about
 // /search
