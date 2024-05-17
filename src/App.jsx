@@ -3,30 +3,30 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
-    page: "about",
+    path: "about",
     element: <div>about</div>,
   },
   {
-    page: "search",
+    path: "search",
     element: <div>search</div>,
   },
   {
-    page: "home",
+    path: "home",
     element: <div>home</div>,
   },
   {
-    page: "spring",
+    path: "spring",
     children: [
       {
-        page: "framework",
+        path: "framework",
         element: <div>framework</div>,
       },
       {
-        page: "doc",
+        path: "doc",
         element: <div>doc</div>,
       },
       {
-        page: "learn",
+        path: "learn",
         element: <div>learn</div>,
       },
     ],
