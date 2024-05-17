@@ -59,6 +59,16 @@ function App(props) {
       .then((res) => alert(res.data));
   }
 
+  function handleAccessKim() {
+    axios
+      .get("/api/main44/kim", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => alert(res.data));
+  }
+
   return (
     <div>
       <div>
@@ -92,6 +102,8 @@ function App(props) {
       <button onClick={handleAccessManager}>매니저 경로</button>
       <hr />
       <button onClick={handleAccessManagerOrAdmin}>매니저/어드민 경로</button>
+      <hr />
+      <button onClick={handleAccessKim}>킴만 접근</button>
     </div>
   );
 }
