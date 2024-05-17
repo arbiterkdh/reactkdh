@@ -54,9 +54,24 @@ function BoardList2() {
   const navigate = useNavigate();
   return (
     <div>
-      <div onClick={"/board?id=1"}>1번 게시물</div>
-      <div onClick={"/board?id=2"}>2번 게시물</div>
-      <div onClick={"/board?id=3"}>3번 게시물</div>
+      <div
+        style={{ cursor: "pointer" }}
+        onClick={() => navigate("/board?id=1")}
+      >
+        1번 게시물
+      </div>
+      <div
+        style={{ cursor: "pointer" }}
+        onClick={() => navigate("/board?id=2")}
+      >
+        2번 게시물
+      </div>
+      <div
+        style={{ cursor: "pointer" }}
+        onClick={() => navigate("/board?id=3")}
+      >
+        3번 게시물
+      </div>
     </div>
   );
 }
