@@ -1,7 +1,12 @@
 import React from "react";
 
 function App(props) {
-  const names = ["January", "February", "March", "April"];
+  const names = [
+    { id: 1, name: "January" },
+    { id: 2, name: "February" },
+    { id: 3, name: "March" },
+    { id: 4, name: "April" },
+  ];
   // <li>January</li>
   // <li>February</li>
   // <li>March</li>
@@ -12,8 +17,8 @@ function App(props) {
   return (
     <div>
       <ul>
-        {names.map((name, id) => (
-          <li key={id}>{name}</li>
+        {names.map((name) => (
+          <li key={name.id}>{name.name}</li>
         ))}
       </ul>
     </div>
